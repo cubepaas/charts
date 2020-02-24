@@ -163,7 +163,6 @@ spec:
         volumeMounts:
         - mountPath: /bitnami/wordpress
           name: wordpress-data
-          subPath: wordpress
         {{- if and .Values.allowOverrideNone .Values.customHTAccessCM}}
         - mountPath: /opt/bitnami/wordpress/wordpress-htaccess.conf
           name: custom-htaccess
