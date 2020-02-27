@@ -14,7 +14,7 @@ questions:
   group: "Container Images"
   subquestions:
   - variable: image.repository
-    default: "ranchercharts/bitnami-wordpress"
+    default: "link-cloud/wordpress"
     description: "WordPress image name"
     type: string
     label: WordPress Image Name
@@ -24,7 +24,7 @@ questions:
     type: string
     label: Image Tag
   - variable: mariadb.image.repository
-    default: "ranchercharts/bitnami-mariadb"
+    default: "link-cloud/mariadb"
     description: "MariaDB image name"
     type: string
     label: MariaDB Image Name
