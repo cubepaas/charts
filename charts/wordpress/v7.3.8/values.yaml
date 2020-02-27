@@ -12,8 +12,8 @@
 ## ref: https://hub.docker.com/r/bitnami/wordpress/tags/
 ##
 image:
-  registry: docker.io
-  repository: ranchercharts/bitnami-wordpress
+  registry: registry.cn-hangzhou.aliyuncs.com
+  repository: link-cloud/wordpress
   tag: 5.2.3-debian-9-r5
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -149,8 +149,8 @@ mariadb:
   enabled: true
 
   image:
-    registry: docker.io
-    repository: ranchercharts/bitnami-mariadb
+    registry: registry.cn-hangzhou.aliyuncs.com
+    repository: link-cloud/mariadb
     tag: 10.3.18-debian-9-r0
 
   ## Disable MariaDB replication
