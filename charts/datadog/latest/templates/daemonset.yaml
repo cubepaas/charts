@@ -1,6 +1,6 @@
 {{- if .Values.daemonset.enabled }}
 {{- if (or (.Values.datadog.apiKeyExistingSecret) (.Values.datadog.apiKey)) }}
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
   name: {{ template "datadog.fullname" . }}

@@ -2,7 +2,7 @@
 {{- $serviceName := include "kubernetes-dashboard.fullname" . -}}
 {{- $servicePort := .Values.service.externalPort -}}
 {{- $paths := .Values.ingress.paths -}}
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ template "kubernetes-dashboard.fullname" . }}

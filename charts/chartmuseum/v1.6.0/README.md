@@ -29,7 +29,7 @@ Please also see https://github.com/kubernetes-helm/chartmuseum
 
 ## Prerequisites
 
-* Kubernetes with apps/v1 available
+* Kubernetes with extensions/v1beta1 available
 * [If enabled] A persistent storage resource and RW access to it
 * [If enabled] Kubernetes StorageClass for dynamic provisioning
 

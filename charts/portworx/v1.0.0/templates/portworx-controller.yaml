@@ -63,7 +63,7 @@ roleRef:
   name: portworx-pvc-controller-role
   apiGroup: rbac.authorization.k8s.io
 ---
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   annotations:
