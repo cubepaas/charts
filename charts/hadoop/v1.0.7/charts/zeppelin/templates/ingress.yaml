@@ -2,7 +2,7 @@
 {{- $serviceName := include "zeppelin.fullname" . }}
 {{- $routePrefix := .Values.routePrefix }}
 {{- $releaseName := .Release.Name }}
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Ingress
 metadata:
   name: {{ template "zeppelin.fullname" . }}

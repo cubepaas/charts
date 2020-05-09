@@ -2,7 +2,7 @@
 {{- $serviceName := include "chartmuseum.fullname" . -}}
 {{- if .Values.ingress.enabled }}
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Ingress
 metadata:
   name: {{ include "chartmuseum.fullname" . }}
