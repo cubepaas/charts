@@ -2,7 +2,7 @@
 {{- $releaseName := .Release.Name -}}
 {{- $serviceName := include "prometheus.pushgateway.fullname" . }}
 {{- $servicePort := .Values.pushgateway.service.servicePort -}}
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Ingress
 metadata:
 {{- if .Values.pushgateway.ingress.annotations }}

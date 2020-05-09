@@ -2,7 +2,7 @@
 {{- $serviceName := include "grafana.fullname" . }}
 {{- $routePrefix := .Values.routePrefix }}
 {{- $releaseName := .Release.Name }}
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Ingress
 metadata:
 {{- if .Values.ingress.annotations }}
