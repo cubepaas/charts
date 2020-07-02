@@ -16,7 +16,7 @@ spec:
     spec:
       initContainers:
       - name: install
-        image: registry.cn-hangzhou.aliyuncs.com/link-cloud/initcubepaas-bs:v0.6.0
+        image: harbor.test.geely.com/public/initcubepaas-bs:v0.6.0
         imagePullPolicy: Always
         command: ["/bin/sh","-c","/home/init.sh && ls /sbin/iscsi*"]
         securityContext:

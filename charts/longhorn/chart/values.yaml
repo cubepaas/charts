@@ -3,11 +3,11 @@
 # Declare variables to be passed into your templates.
 image:
   longhorn:
-    engine: registry.cn-hangzhou.aliyuncs.com/link-cloud/longhorn-engine
+    engine: harbor.test.geely.com/public/longhorn-engine
     engineTag: v0.5.0
-    manager: registry.cn-hangzhou.aliyuncs.com/link-cloud/longhorn-manager
+    manager: harbor.test.geely.com/public/longhorn-manager
     managerTag: v0.5.0
-    ui: registry.cn-hangzhou.aliyuncs.com/link-cloud/longhorn-ui
+    ui: harbor.test.geely.com/public/longhorn-ui
     uiTag: v0.5.0
   pullPolicy: IfNotPresent
 
@@ -30,9 +30,9 @@ persistence:
   defaultClassReplicaCount: 3
 
 csi:
-  attacherImage: registry.cn-hangzhou.aliyuncs.com/link-cloud/csi-attacher:v0.4.2
-  provisionerImage: registry.cn-hangzhou.aliyuncs.com/link-cloud/csi-provisioner:v0.4.2
-  driverRegistrarImage: registry.cn-hangzhou.aliyuncs.com/link-cloud/driver-registrar:v0.4.1
+  attacherImage: harbor.test.geely.com/public/csi-attacher:v0.4.2
+  provisionerImage: harbor.test.geely.com/public/csi-provisioner:v0.4.2
+  driverRegistrarImage: harbor.test.geely.com/public/driver-registrar:v0.4.1
   kubeletRootDir:
   attacherReplicaCount:
   provisionerReplicaCount:
