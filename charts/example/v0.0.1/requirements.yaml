@@ -1,0 +1,10 @@
+dependencies:
+  - name: mysql
+    version: 0.0.1
+    condition: mysql.enabled
+    repository: "file://./charts/mysql/"
+
+  - name: app
+    version: 0.0.1
+    condition: app.enabled
+    repository: "file://./charts/java/"

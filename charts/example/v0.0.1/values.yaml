@@ -1,0 +1,13 @@
+mysql:
+  enabled: true
+
+app:
+  enabled: true
+
+global:
+  affinity:
+    domain: idc
+    requiredaffinity:
+      enabled: false
+    preferenceaffinity:
+      enabled: false

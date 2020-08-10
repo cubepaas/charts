@@ -1,0 +1,48 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+  labels:
+    app: {{ .Values.name }}
+spec:
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+    spec:
+      affinity:
+        nodeAffinity:
+ {{- if .Values.global.affinity.requiredaffinity.enabled }}
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: "provider.cubepaas.com/driver"
+                operator: In
+                values:
+                - {{ .values.global.affinity.requiredaffinity.values }}
+{{- end }}
+ {{- if .Values.global.affinity.preferenceaffinity.enabled }}
+           preferredDuringSchedulingIgnoredDuringExecution:
+          - preference:
+              matchExpressions:
+              - key: "provider.cubepaas.com/driver"
+                operator: In
+                values:
+                - {{ .values.global.affinity.preferenceaffinity.values }}
+{{- end }}
+      containers:
+      - name: {{ .Values.name }}
+        image: "{{ .Values.image }}:{{ .Values.imageTag }}"
+        imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        env:
+        - name: MYSQL_PASSWORD
+          value: 12netwyw#&*
+        - name: MYSQL_URL
+          value: mysql
+        - name: MYSQL_USER
+          value: root
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources: {}

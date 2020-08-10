@@ -1,0 +1,129 @@
+ questions:
+ - variable: mysql.enabled
+   default: false
+   description: "mysql enable"
+   type: boolean
+   label: MySQL Enable
+   required: true
+   show_subquestion_if: false
+   group: "MySQL Settings"
+   subquestions:
+   - variable: mysql.mysqlUser
+     default: "root"
+     description: "mysql user"
+     type: string
+     label: MySQL User
+     group: "MySQL Settings"
+   - variable: mysql.mysqlPassword
+     default: "12netwyw#&*"
+     description: "Password of user"
+     type: string
+     label: MySQL User Password
+     group: "MySQL Settings"
+   - variable: mysql.mysqldatabase
+     default: "example"
+     description: "mysql database"
+     type: string
+     label: MySQL Database
+     group: "MySQL Settings"
+   - variable: mysql.persistence.storageClass
+     default: "storagebs"
+     description: "mysql storage type"
+     type: string
+     required: true
+     label: MySQL storage type
+     group: "MySQL Settings"
+   - variable: mysql.persistence.size
+     default: "20Gi"
+     description: "mysql data storage size"
+     type: string
+     required: true
+     label: MySQL storage size
+     group: "MySQL Settings"
+
+ - variable: app.name
+   default: "java"
+   description: "app name"
+   type: string
+   label: App Name
+   group: "App Settings"
+
+ - variable: app.image
+   default: "registry.cn-hangzhou.aliyuncs.com/netbankzgg/java"
+   description: "app image"
+   type: string
+   label: App Image
+   group: "App Settings"
+ 
+ - variable: app.imageTag
+   default: "netbank-test-769"
+   description: "app image tag"
+   type: string
+   label: Java Image tag
+   group: "App Settings"
+
+ - variable: app.service.type
+   default: "ClusterIP"
+   description: "App service type"
+   type: enum
+   required: true
+   label: App Service Type
+   show_if: "ingress.enabled=false"
+   group: "App Settings"
+   options:
+     - "ClusterIP"
+     - "LoadBalancer"
+
+ - variable: app.service.port
+   default: "80"
+   description: "app port"
+   type: string
+   label: App Port
+   group: "App Settings"
+
+ - variable: app.ingress.enabled
+   default: true
+   description: "Expose app using Layer 7 Load Balancer - ingress"
+   type: boolean
+   label: Expose app using Layer 7 Load Balancer
+   show_subquestion_if: true
+   group: "Services and Load Balancing"
+   required: true
+   subquestions:
+   - variable: app.ingress.host
+     default: "example.cubepaas.com"
+     description: "app host"
+     type: hostname
+     required: true
+     label: Hostname
+   - variable: app.ingress.tls
+     default: "false"
+     description: "app tls"
+     type: string
+     label: App Tls
+   - variable: app.ingress.secret
+     default: "tls-secret"
+     description: "app host secret"
+     type: string
+     label: App host secret
+
+ - variable: global.affinity.requiredaffinity.enabled
+   default: "false"
+   description: "domain requiredaffinity"
+   type: string
+   label: Doamin Requiredaffinity
+   group: "domain select"
+
+ - variable: global.affinity.preferenceaffinity.enabled
+   default: "false"
+   description: "domain preferenceaffinity"
+   type: string
+   label: Doamin Preferenceaffinity
+   group: "domain select"
+
+ - variable: global.affinity.domain
+   default: "idc"
+   description: "domain select"
+   type: string
+   label: Doamin Select
+   group: "domain select"

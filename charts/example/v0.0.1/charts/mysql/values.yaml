@@ -1,0 +1,38 @@
+
+image: 
+  repository: mysql 
+  tag: 5.5.59
+
+imagePullPolicy: Always
+
+nodeSelector: {}
+tolerations: []
+ 
+mysqlUser: "root"
+mysqlPassword: "12netwyw#&*"
+mysqlRootPassword: "12netwyw#&*"  
+mysqldatabase: "example"
+
+## Persist data to a persistent volume
+persistence:
+  enabled: true
+  storageClass: "storagebs"
+  accessMode: ReadWriteOnce
+  size: 20Gi
+
+resources: {}
+ 
+ # Custom mysql configuration files used to override default mysql settings
+configurationFiles:
+   expireLogsDays: "30"
+   maxBinlogSize: "200m"
+   serverId: "250"
+   logBin: "/binlog/master-bin.log"
+   logBinIndex: "/binlog/master-bin.index"
+   binLogIgnoreDb: "mysql"
+
+service:
+   ## Specify a service type
+   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services---service-types
+   type: ClusterIP
+   port: 3306

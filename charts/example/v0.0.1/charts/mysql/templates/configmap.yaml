@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+data:
+  master.cnf: |-
+    [mysqld]
+    default-time_zone = '+8:00'
+    server-id = {{ .Values.configurationFiles.serverId }}
+    log_bin = {{ .Values.configurationFiles.logBin }}
+    log_bin_index = {{ .Values.configurationFiles.logBinIndex }}
+    expire_logs_days = {{ .Values.configurationFiles.expireLogsDays }}
+    max_binlog_size = {{ .Values.configurationFiles.maxBinlogSize }}
+    binlog_ignore_db = {{ .Values.configurationFiles.binLogIgnoreDb }}

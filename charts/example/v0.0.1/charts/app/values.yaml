@@ -1,0 +1,47 @@
+name: java
+image:  registry.cn-hangzhou.aliyuncs.com/netbankzgg/java
+imageTag: netbank-test-769
+
+imagePullPolicy: Always
+
+nodeSelector: {}
+tolerations: []
+ 
+livenessProbe:
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
+  successThreshold: 1
+  failureThreshold: 3
+
+readinessProbe:
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 1
+  successThreshold: 1
+  failureThreshold: 3
+
+## Persist data to a persistent volume
+persistence:
+  enabled: true
+  storageClass: ""
+  accessMode: ReadWriteOnce
+  size: 8Gi
+
+resources:
+   requests:
+     memory: 256Mi
+     cpu: 100m
+ 
+ # Custom mysql configuration files used to override default mysql settings
+configurationFiles: {}
+
+service:
+   type: ClusterIP
+   port: 80
+
+ingress:
+  enabled: true
+  tls: true
+  hosts: example.cubepaas.com
+  secret: tls-secret
