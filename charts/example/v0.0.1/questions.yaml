@@ -75,43 +75,42 @@
    label: App Port
    group: "Services and Load Balancing"
 
+ - variable: app.service.type
+   default: "ClusterIP"
+   description: "App service type"
+   type: string
+   label: App Service Type
+   show_subquestion_if: "app.service.type=Ingress"
+   group: "Services and Load Balancing"
+   options:
+     - "ClusterIP"
+     - "LoadBalancer"
+
  - variable: app.ingress.enabled
    default: true
-   description: "Expose app using Layer 7 Load Balancer - ingress"
+   description: "Expose app using ingress"
    type: boolean
    label: Expose app using Layer 7 Load Balancer
    show_subquestion_if: true
    group: "Services and Load Balancing"
    required: true
    subquestions:
-   - variable: app.ingress.host
-     default: "example.cubepaas.com"
-     description: "app host"
-     type: hostname
-     required: true
-     label: Hostname
-   - variable: app.ingress.tls
-     default: "false"
-     description: "app tls"
-     type: string
-     label: App Tls
-   - variable: app.ingress.secret
-     default: "tls-secret"
-     description: "app host secret"
-     type: string
-     label: App host secret
-
- - variable: app.service.type
-   default: "ClusterIP"
-   description: "App service type"
-   type: enum
-   required: true
-   label: App Service Type
-   show_if: "app.ingress.enabled=false"
-   group: "Services and Load Balancing"
-   options:
-     - "ClusterIP"
-     - "LoadBalancer"
+     - variable: app.ingress.host
+       default: "example.cubepaas.com"
+       description: "app host"
+       type: hostname
+       required: true
+       label: Hostname
+     - variable: app.ingress.tls
+       default: "false"
+       description: "app tls"
+       type: string
+       label: App Tls
+     - variable: app.ingress.secret
+       default: "tls-secret"
+       description: "app host secret"
+       type: string
+       label: App host secret
 
  - variable: global.affinity.requiredaffinity.enabled
    default: "false"
