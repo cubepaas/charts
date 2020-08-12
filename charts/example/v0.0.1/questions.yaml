@@ -68,24 +68,12 @@
    label: Java Image tag
    group: "App Settings"
 
- - variable: app.service.type
-   default: "ClusterIP"
-   description: "App service type"
-   type: enum
-   required: true
-   label: App Service Type
-   show_if: "ingress.enabled=false"
-   group: "App Settings"
-   options:
-     - "ClusterIP"
-     - "LoadBalancer"
-
  - variable: app.service.port
    default: "80"
    description: "app port"
    type: string
    label: App Port
-   group: "App Settings"
+   group: "Services and Load Balancing"
 
  - variable: app.ingress.enabled
    default: true
@@ -113,6 +101,18 @@
      type: string
      label: App host secret
 
+ - variable: app.service.type
+   default: "ClusterIP"
+   description: "App service type"
+   type: enum
+   required: true
+   label: App Service Type
+   show_if: "app.ingress.enabled=false"
+   group: "Services and Load Balancing"
+   options:
+     - "ClusterIP"
+     - "LoadBalancer"
+
  - variable: global.affinity.requiredaffinity.enabled
    default: "false"
    description: "domain requiredaffinity"
@@ -128,7 +128,7 @@
    group: "domain select"
 
  - variable: global.affinity.domain
-   default: "idc"
+   default: ""
    description: "domain select"
    type: string
    label: Doamin Select
