@@ -55,14 +55,14 @@
    group: "App Settings"
 
  - variable: app.image
-   default: "registry.cn-hangzhou.aliyuncs.com/netbankzgg/java"
+   default: ""
    description: "app image"
    type: string
    label: App Image
    group: "App Settings"
  
  - variable: app.imageTag
-   default: "netbank-test-769"
+   default: ""
    description: "app image tag"
    type: string
    label: Java Image tag

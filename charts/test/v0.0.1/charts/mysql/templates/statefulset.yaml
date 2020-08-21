@@ -54,7 +54,13 @@ spec:
         name: mysql
         ports:
         - containerPort: {{ .Values.service.port }}
-        resources: {}
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 200Mi
         volumeMounts:
         - name: data
           mountPath: /var/lib/mysql

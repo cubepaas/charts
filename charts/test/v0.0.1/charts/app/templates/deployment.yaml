@@ -47,8 +47,8 @@ spec:
         - containerPort: {{ .Values.service.port }}
         resources:
           limits:
-            cpu: 200m
-            memory: 256Mi
+            cpu: 300m
+            memory: 800Mi
           requests:
             cpu: 100m
-            memory: 256Mi
+            memory: 200Mi
