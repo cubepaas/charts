@@ -45,4 +45,10 @@ spec:
           value: root
         ports:
         - containerPort: {{ .Values.service.port }}
-        resources: {}
+        resources:
+          limits:
+            cpu: 300m
+            memory: 800Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi

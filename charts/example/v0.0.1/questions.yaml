@@ -5,31 +5,35 @@
    type: boolean
    label: MySQL Enable
    required: true
-   show_subquestion_if: false
+   show_subquestion_if: true
    group: "MySQL Settings"
    subquestions:
    - variable: mysql.image.tag
      default: "5.5.59"
      description: "mysql version"
      type: string
+     required: true
      label: MySQL Version
      group: "MySQL Settings"
    - variable: mysql.mysqlUser
      default: "root"
      description: "mysql user"
      type: string
+     required: true
      label: MySQL User
      group: "MySQL Settings"
    - variable: mysql.mysqlPassword
      default: "12netwyw#&*"
      description: "Password of user"
      type: string
+     required: true
      label: MySQL User Password
      group: "MySQL Settings"
    - variable: mysql.mysqldatabase
      default: "example"
      description: "mysql database"
      type: string
+     required: true
      label: MySQL Database
      group: "MySQL Settings"
    - variable: mysql.persistence.storageClass
@@ -51,20 +55,23 @@
    default: "java"
    description: "app name"
    type: string
+   required: true
    label: App Name
    group: "App Settings"
 
  - variable: app.image
-   default: "registry.cn-hangzhou.aliyuncs.com/netbankzgg/java"
+   default: ""
    description: "app image"
    type: string
+   required: true
    label: App Image
    group: "App Settings"
  
  - variable: app.imageTag
-   default: "netbank-test-769"
+   default: ""
    description: "app image tag"
    type: string
+   required: true
    label: Java Image tag
    group: "App Settings"
 
@@ -72,6 +79,7 @@
    default: "80"
    description: "app port"
    type: string
+   required: true
    label: App Port
    group: "Services and Load Balancing"
 
@@ -79,6 +87,7 @@
    default: "ClusterIP"
    description: "App service type"
    type: string
+   required: true
    label: App Service Type
    show_subquestion_if: "app.service.type=Ingress"
    group: "Services and Load Balancing"
@@ -105,6 +114,7 @@
        default: "false"
        description: "app tls"
        type: string
+       required: true
        label: App Tls
      - variable: app.ingress.secret
        default: "tls-secret"
