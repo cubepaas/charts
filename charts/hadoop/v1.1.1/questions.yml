@@ -92,15 +92,6 @@ questions:
     description: "If undefined or set to null, using the default storageClass. Defaults to null."
     type: storageclass
     label: Storage Class for DataNode
-- variable: yarn.service.type
-  default: "ClusterIP"
-  description: "yarn ui service type"
-  type: enum
-  group: "YARN UI"
-  options:
-    - "ClusterIP"
-  required: true
-  label: YARN UI Service Type
 # zeppelin configurations
 - variable: zeppelin.enabled
   default: true
@@ -108,12 +99,3 @@ questions:
   type: boolean
   label: Enabled Zeppelin Chart
   group: "Zeppelin"
-- variable: zeppelin.service.type
-  default: "ClusterIP"
-  description: "yarn ui service type"
-  type: enum
-  group: "Zeppelin"
-  options:
-    - "ClusterIP"
-  required: true
-  label: Zeppelin Service Type
