@@ -64,25 +64,6 @@ questions:
   label: Enable Redis Metrics Exporter
   type: boolean
   group: "Redis Master Settings"
-- variable: master.service.type
-  default: "ClusterIP"
-  description: "Redis master service type"
-  type: enum
-  group: "Redis Master Settings"
-  options:
-    - "ClusterIP"
-    - "NodePort"
-  required: true
-  label: Redis Master Service Type
-  show_subquestion_if: "NodePort"
-  subquestions:
-  - variable: master.service.nodePort
-    default: ""
-    description: "NodePort port number(to set explicitly, choose port between 30000-32767)"
-    type: int
-    min: 30000
-    max: 32767
-    label: Redis Master Service NodePort number
 # slave config
 - variable: slave.persistence.enabled
   default: false
