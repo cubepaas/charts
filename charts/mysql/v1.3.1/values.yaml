@@ -209,5 +209,5 @@ podLabels: {}
 initContainer:
   resources:
     requests:
-      memory: 10Mi
+      memory: 40Mi
       cpu: 10m
