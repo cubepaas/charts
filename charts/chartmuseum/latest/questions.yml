@@ -267,7 +267,7 @@ questions:
     label: Hostname
 - variable: service.type
   required: true
-  default: "NodePort"
+  default: "ClusterIP"
   description: "ChartMuseum Service Type"
   type: enum
   label: Service Type For ChartMuseum 
@@ -275,7 +275,6 @@ questions:
   show_if: "ingress.enabled=false"
   options:
     - "ClusterIP"
-    - "NodePort"
     - "LoadBalancer"
 # chartmuseum options
 - variable: env.secret.BASIC_AUTH_USER

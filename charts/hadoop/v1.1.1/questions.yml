@@ -92,42 +92,15 @@ questions:
     description: "If undefined or set to null, using the default storageClass. Defaults to null."
     type: storageclass
     label: Storage Class for DataNode
-- variable: yarn.ingress.enabled
-  default: "true"
-  description: "Expose YARN UI using Layer 7 Load Balancer - ingress"
-  type: boolean
-  label: Expose YARN UI using Layer 7 Load Balancer
-  show_subquestion_if: true
-  group: "YARN UI"
-  required: true
-  subquestions:
-  - variable: yarn.ingress.hosts[0]
-    default: "xip.io"
-    description: "Hostname to your YARN UI installation"
-    type: hostname
-    required: true
-    label: Hostname
 - variable: yarn.service.type
-  default: "NodePort"
+  default: "ClusterIP"
   description: "yarn ui service type"
   type: enum
   group: "YARN UI"
   options:
     - "ClusterIP"
-    - "NodePort"
   required: true
   label: YARN UI Service Type
-  show_subquestion_if: "NodePort"
-  show_if: "yarn.ingress.enabled=false"
-  subquestions:
-  - variable: yarn.service.nodePort
-    default: ""
-    description: "NodePort http port(to set explicitly, choose port between 30000-32767)"
-    type: int
-    min: 30000
-    max: 32767
-    show_if: "yarn.ingress.enabled=false"
-    label: YARN UI NodePort Number
 # zeppelin configurations
 - variable: zeppelin.enabled
   default: true
@@ -135,41 +108,12 @@ questions:
   type: boolean
   label: Enabled Zeppelin Chart
   group: "Zeppelin"
-- variable: zeppelin.ingress.enabled
-  default: "true"
-  description: "Expose Zeppelin using Layer 7 Load Balancer - ingress"
-  type: boolean
-  label: Expose Zeppelin using Layer 7 Load Balancer
-  show_subquestion_if: true
-  group: "Zeppelin"
-  required: true
-  show_if: "zeppelin.enabled=true"
-  subquestions:
-  - variable: zeppelin.ingress.hosts[0]
-    default: "xip.io"
-    description: "Hostname to your Zeppelin installation"
-    type: hostname
-    required: true
-    label: Hostname
-    show_if: "zeppelin.enabled=true"
 - variable: zeppelin.service.type
-  default: "NodePort"
+  default: "ClusterIP"
   description: "yarn ui service type"
   type: enum
   group: "Zeppelin"
   options:
     - "ClusterIP"
-    - "NodePort"
   required: true
   label: Zeppelin Service Type
-  show_subquestion_if: "NodePort"
-  show_if: "ingress.enabled=false&&zeppelin.enabled=true"
-  subquestions:
-  - variable: zeppelin.service.nodePort
-    default: ""
-    description: "NodePort http port(to set explicitly, choose port between 30000-32767)"
-    type: int
-    min: 30000
-    max: 32767
-    show_if: "ingress.enabled=false"
-    label: Zeppelin NodePort Number

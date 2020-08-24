@@ -3,7 +3,7 @@ labels:
 categories:
 - Database
 questions: 
-- default: 100Gi
+- default: 50Gi
   variable: Storage
   description: "Size of volume for each CockroachDB Node/Pod"
   group: Config
