@@ -51,8 +51,8 @@ spec:
         - name: MYSQL_DATABASE
           value: {{ .Values.mysqldatabase}}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-        name: mysql
         args: ["--ignore-db-dir=lost+found", "--character-set-server=utf8mb4"]
+        name: mysql
         ports:
         - containerPort: {{ .Values.service.port }}
         resources:
