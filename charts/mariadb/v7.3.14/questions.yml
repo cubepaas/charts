@@ -124,32 +124,6 @@ questions:
     type: storageclass
     label: Storage Class for MariaDB Slave
     show_if: "slave.persistence.enabled=true"
-- variable: service.type
-  default: "NodePort"
-  description: "MariaDB K8s Service type"
-  type: enum
-  options:
-    - "ClusterIP"
-    - "NodePort"
-  required: true
-  label: MariaDB Service Type
-  show_subquestion_if: "NodePort"
-  group: "Services and Load Balancing"
-  subquestions:
-  - variable: service.nodePort.master
-    default: ""
-    description: "NodePort port number(to set explicitly, choose port between 30000-32767)"
-    type: int
-    min: 30000
-    max: 32767
-    label: Service NodePort number
-  - variable: service.nodePort.slave
-    default: ""
-    description: "NodePort port number(to set explicitly, choose port between 30000-32767)"
-    type: int
-    min: 30000
-    max: 32767
-    label: Service NodePort number
 - variable: metrics.enabled
   default: false
   description: "Start a side-car prometheus exporter"
