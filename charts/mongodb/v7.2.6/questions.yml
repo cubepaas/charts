@@ -113,25 +113,6 @@ questions:
     type: pvc
     label: Uses Existing Persistent Volume Claim for LocalStorage
     show_if: "persistence.enabled=true&&replicaSet.enabled=false"
-- variable: service.type
-  default: "ClusterIP"
-  description: "MongoDB Kubernetes Service type"
-  type: enum
-  group: "Service Settings"
-  options:
-    - "ClusterIP"
-    - "NodePort"
-  required: true
-  label: MongoDB Service Type
-  show_subquestion_if: "NodePort"
-  subquestions:
-  - variable: service.nodePort
-    default: ""
-    description: "NodePort port number(to set explicitly, choose port between 30000-32767)"
-    type: int
-    min: 30000
-    max: 32767
-    label: Service NodePort number
 - variable: metrics.enabled
   default: true
   description: "Start a side-car prometheus exporter"
