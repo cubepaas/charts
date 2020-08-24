@@ -74,19 +74,3 @@ questions:
   label: Enable Kafka Topics UI Dashboard
   group: "Kafka Topics UI"
   show_if: "global.enterprise=false"
-- variable: kafka-topics-ui.ingress.enabled
-  default: true
-  description: "Expose kafka topics UI using Layer 7 Load Balancer - ingress"
-  type: boolean
-  label: Expose Kafka Topics UI using Layer 7 Load Balancer
-  show_if: "kafka-topics-ui.enabled=true&&global.enterprise=false"
-  show_subquestion_if: true
-  group: "Kafka Topics UI"
-  subquestions:
-  - variable: kafka-topics-ui.ingress.hosts[0]
-    default: "xip.io"
-    description: "layer 7 Load Balancer hostname"
-    type: hostname
-    show_if: "kafka-topics-ui.enabled=true&&kafka-topics-ui.ingress.enabled=true&&global.enterprise=false"
-    required: true
-    label: Layer 7 Load Balancer Hostname
