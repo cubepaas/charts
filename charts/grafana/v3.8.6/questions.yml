@@ -88,12 +88,3 @@ questions:
     description: "If not empty, uses the specified existing PVC instead of creating new one"
     type: pvc
     label: Existing Persistent Volume Claim for Grafana
-- variable: service.type
-  default: "ClusterIP"
-  description: "Grafana service type"
-  type: enum
-  group: "Service and Load Balancing"
-  options:
-    - "ClusterIP"
-  required: true
-  label: Grafana Service Type
