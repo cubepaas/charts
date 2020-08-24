@@ -164,20 +164,9 @@ questions:
   type: enum
   options:
     - "ClusterIP"
-    - "NodePort"
     - "LoadBalancer"
   required: true
   label: Magento Service Type
-  show_subquestion_if: "NodePort"
-  subquestions:
-  - variable: service.nodePorts.http
-    default: ""
-    description: "NodePort http port(to set explicitly, choose port between 30000-32767)"
-    type: int
-    min: 30000
-    max: 32767
-    show_if: "service.type=NodePort"
-    label: NodePort Http Port
 - variable: service.loadBalancerIP
   default: ""
   description: "Load Balancer IP for the Magento Service"
@@ -195,17 +184,3 @@ questions:
     - "production"
     - "developer"
   label: Magento Mode
-- variable: ingress.enabled
-  default: true
-  description: "Expose app using Layer 7 Load Balancer - ingress"
-  type: boolean
-  label: Expose app using Layer 7 Load Balancer
-  show_subquestion_if: true
-  group: "Services and Load Balancing"
-  subquestions:
-  - variable: ingress.hosts[0].name
-    default: "xip.io"
-    description: "Hostname to your WordPress installation"
-    type: hostname
-    required: true
-    label: Hostname
