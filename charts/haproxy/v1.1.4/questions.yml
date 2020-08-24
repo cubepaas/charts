@@ -19,24 +19,6 @@ questions:
     description: "HAProxy Ingress Controller Tag"
     type: string
     label: HAProxy Ingress Controller Tag
-- variable: controller.kind
-  type: enum
-  options:
-    - "DaemonSet"
-    - "Deployment"
-  default: "Deployment"
-  description: "Deployment Type"
-  label: Deployment Type
-  group: "Settings"
-- variable: controller.service.type
-  type: enum
-  options:
-    - "LoadBalancer"
-    - "NodePort"
-  default: "NodePort"
-  description: "Service Type for HAProxy Ingress Controller"
-  label: Service Type
-  group: "Settings"
 - variable: controller.ingressClass
   default: ""
   description: "Ingress Class for targeting this controller"

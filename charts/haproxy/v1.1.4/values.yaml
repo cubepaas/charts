@@ -31,7 +31,7 @@ podSecurityPolicy:
 ## Enable RBAC Authorization
 ## ref: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 rbac:
-  create: true
+  create: false
 
 
 ## Configure Service Account
@@ -176,7 +176,7 @@ controller:
   ## Controller Service configuration
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/
   service:
-    type: NodePort    # can be 'NodePort' or 'LoadBalancer'
+    type: LoadBalancer    # can be 'NodePort' or 'LoadBalancer'
 
     ## Service annotations
     ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
