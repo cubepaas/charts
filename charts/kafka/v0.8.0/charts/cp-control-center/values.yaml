@@ -19,7 +19,7 @@ imagePullPolicy: IfNotPresent
 imagePullSecrets:
 
 serviceHttpPort: 9021
-serviceType: NodePort
+serviceType: LoadBalancer
 
 ## Control Center properties
 ## ref: 

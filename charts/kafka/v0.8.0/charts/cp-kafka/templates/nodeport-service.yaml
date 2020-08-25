@@ -18,7 +18,7 @@ metadata:
     heritage: {{ $root.Release.Service }}
     pod: {{ $responsiblePod }}
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - name: external-broker
       port: {{ $servicePort }}
