@@ -10,10 +10,10 @@ global:
 
 ## Install Default RBAC roles and bindings
 rbac:
-  create: true
+  create: false
   apiVersion: v1
 
-enableCRDs: true
+enableCRDs: false
 
 ## Service account name and whether to create it
 serviceAccount:
