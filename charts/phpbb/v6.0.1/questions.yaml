@@ -51,12 +51,11 @@ questions:
   label: phpBB Admin Email
   group: "phpBB Settings"
 - variable: service.type
-  default: "NodePort"
+  default: "ClusterIP"
   description: "phpBB Service type"
   type: enum
   options:
     - "ClusterIP"
-    - "NodePort"
     - "LoadBalancer"
   required: true
   label: phpBB Service Type
