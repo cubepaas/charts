@@ -120,6 +120,5 @@ questions:
   options:
     - "ClusterIP"
     - "LoadBalancer"
-    - "NodePort"
   required: true
   label: Sqlproxy Service Type
