@@ -8,7 +8,7 @@ image:
   pullPolicy: IfNotPresent
 service:
   name: web
-  type: NodePort
+  type: LoadBalancer
   externalPort: 8000
   internalPort: 8000
 ingress:
