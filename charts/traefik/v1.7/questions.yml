@@ -22,7 +22,6 @@ questions:
   type: enum
   options:
     - "LoadBalancer"
-    - "NodePort"
     - "ClusterIP"
   default: "LoadBalancer"
   description: "Service Type for Traefik"
@@ -35,7 +34,7 @@ questions:
   label: Debug
   group: "General Settings"
 - variable: rbac.enabled
-  default: true
+  default: false
   description: "Enable RBAC Settings"
   label: RBAC
   type: boolean
