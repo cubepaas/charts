@@ -79,8 +79,7 @@
    default: ""
    description: "app image pull secret"
    type: string
-   required: true
-   label: Pull Image secret
+   label: Image Secret
    group: "App Settings"
 
  - variable: app.service.port
