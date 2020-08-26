@@ -77,7 +77,7 @@
 
  - variable: app.imagePullSecret
      default: ""
-     description: "app image tag"
+     description: "app image pull secret"
      type: string
      required: true
      label: Pull Image secret
