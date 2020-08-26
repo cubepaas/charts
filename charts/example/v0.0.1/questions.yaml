@@ -76,12 +76,12 @@
    group: "App Settings"
 
  - variable: app.imagePullSecret
-     default: ""
-     description: "app image pull secret"
-     type: string
-     required: true
-     label: Pull Image secret
-     group: "App Settings"
+   default: ""
+   description: "app image pull secret"
+   type: string
+   required: true
+   label: Pull Image secret
+   group: "App Settings"
 
  - variable: app.service.port
    default: "80"
