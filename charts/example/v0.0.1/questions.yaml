@@ -75,6 +75,14 @@
    label: Java Image tag
    group: "App Settings"
 
+ - variable: app.imagePullSecret
+     default: ""
+     description: "app image tag"
+     type: string
+     required: true
+     label: Pull Image secret
+     group: "App Settings"
+
  - variable: app.service.port
    default: "80"
    description: "app port"

@@ -30,6 +30,10 @@ spec:
                 values:
                 - {{ .values.global.affinity.preferenceaffinity.values }}
 {{- end }}
+  {{- if .Values.imagePullSecret }}
+      imagePullSecrets:
+      - name: {{ .Values.imagePullSecret }}
+  {{- end }}
       containers:
       - name: {{ .Values.name }}
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"

@@ -1,6 +1,7 @@
 name: java
 image:  registry.cn-hangzhou.aliyuncs.com/netbankzgg/java
 imageTag: netbank-test-769
+imagePullSecret: ""
 
 imagePullPolicy: Always
 
