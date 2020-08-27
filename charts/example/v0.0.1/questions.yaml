@@ -111,7 +111,7 @@
    group: "Services and Load Balancing"
    required: true
    subquestions:
-     - variable: app.ingress.host
+     - variable: app.ingress.hosts
        default: "example.cubepaas.com"
        description: "app host"
        type: hostname
