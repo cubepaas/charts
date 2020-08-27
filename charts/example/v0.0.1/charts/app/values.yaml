@@ -22,13 +22,6 @@ readinessProbe:
   successThreshold: 1
   failureThreshold: 3
 
-## Persist data to a persistent volume
-persistence:
-  enabled: true
-  storageClass: ""
-  accessMode: ReadWriteOnce
-  size: 8Gi
-
 resources:
    requests:
      memory: 256Mi
