@@ -129,14 +129,14 @@
        type: string
        label: App host secret
 
- - variable: global.requiredaffinity.enabled
+ - variable: global.affinity.requiredaffinity.enabled
    default: false
    description: "domain requiredaffinity"
    type: boolean
    label: Doamin Requiredaffinity
    group: "domain select"
 
- - variable: global.preferenceaffinity.enabled
+ - variable: global.affinity.preferenceaffinity.enabled
    default: false
    description: "domain preferenceaffinity"
    type: boolean

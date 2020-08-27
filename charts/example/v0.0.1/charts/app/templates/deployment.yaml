@@ -12,7 +12,7 @@ spec:
     spec:
       affinity:
         nodeAffinity:
- {{- if .Values.global.requiredaffinity.enabled }}
+ {{- if .Values.global.affinity.requiredaffinity.enabled }}
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
@@ -21,7 +21,7 @@ spec:
                 values:
                 - "{{ .Values.global.affinity.domain }}"
 {{- end }}
- {{- if .Values.global.preferenceaffinity.enabled }}
+ {{- if .Values.global.affinity.preferenceaffinity.enabled }}
            preferredDuringSchedulingIgnoredDuringExecution:
           - preference:
               matchExpressions:
