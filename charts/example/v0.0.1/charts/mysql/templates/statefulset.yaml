@@ -38,6 +38,11 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: mysql-password
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: mysql-password
         - name: MYSQL_USER
           valueFrom:
             secretKeyRef:
