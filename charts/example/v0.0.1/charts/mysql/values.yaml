@@ -10,7 +10,6 @@ tolerations: []
  
 mysqlUser: "root"
 mysqlPassword: "12netwyw#&*"
-mysqlRootPassword: "12netwyw#&*"  
 mysqldatabase: "example"
 
 ## Persist data to a persistent volume
