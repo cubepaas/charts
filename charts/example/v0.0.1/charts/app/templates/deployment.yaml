@@ -19,7 +19,7 @@ spec:
               - key: "provider.cubepaas.com/driver"
                 operator: In
                 values:
-                - {{ .values.global.affinity.requiredaffinity.values }}
+                - "{{ .Values.global.affinity.requiredaffinity.values }}"
 {{- end }}
  {{- if .Values.global.affinity.preferenceaffinity.enabled }}
            preferredDuringSchedulingIgnoredDuringExecution:
@@ -28,7 +28,7 @@ spec:
               - key: "provider.cubepaas.com/driver"
                 operator: In
                 values:
-                - {{ .values.global.affinity.preferenceaffinity.values }}
+                - "{{ .Values.global.affinity.preferenceaffinity.values }}"
 {{- end }}
   {{- if .Values.imagePullSecret }}
       imagePullSecrets:

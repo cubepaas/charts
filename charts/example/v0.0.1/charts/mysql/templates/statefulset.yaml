@@ -20,7 +20,7 @@ spec:
               - key: "provider.cubepaas.com/driver"
                 operator: In
                 values:
-                - {{ .Values.global.affinity.domain }}
+                - "{{ .Values.global.affinity.domain }}"
 {{- end }}
  {{- if .Values.global.affinity.preferenceaffinity.enabled }}
            preferredDuringSchedulingIgnoredDuringExecution:
@@ -29,7 +29,7 @@ spec:
               - key: "provider.cubepaas.com/driver"
                 operator: In
                 values:
-                - {{ .Values.global.affinity.domain }}
+                - "{{ .Values.global.affinity.domain }}"
 {{- end }}
       containers:
       - env:
