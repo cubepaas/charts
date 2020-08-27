@@ -8,6 +8,6 @@ global:
   affinity:
     domain: "idc"
   requiredaffinity:
-    enabled: false
+    enabled: "false"
   preferenceaffinity:
-    enabled: false
+    enabled: "false"
