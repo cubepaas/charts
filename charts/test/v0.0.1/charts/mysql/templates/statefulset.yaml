@@ -13,7 +13,7 @@ spec:
     spec:
       affinity:
         nodeAffinity:
- {{- if .Values.global.requiredaffinity.enabled }}
+  {{- if .Values.global.requiredaffinity.enabled }}
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
@@ -26,10 +26,11 @@ spec:
                 values:
                   - "{{ .Values.global.affinity.domain }}"
                 {{- end }}
-{{- end }}
- {{- if .Values.global.preferenceaffinity.enabled }}
-           preferredDuringSchedulingIgnoredDuringExecution:
-          - preference:
+  {{- end }}
+  {{- if .Values.global.preferenceaffinity.enabled }}
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            preference:
               matchExpressions:
               - key: "provider.cubepaas.com/driver"
                 operator: In
@@ -40,7 +41,7 @@ spec:
                 values:
                   - "{{ .Values.global.affinity.domain }}"
                 {{- end }}
-{{- end }}
+  {{- end }}
       containers:
       - env:
         - name: MYSQL_PASSWORD
