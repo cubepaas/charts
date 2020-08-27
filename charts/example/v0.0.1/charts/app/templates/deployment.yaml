@@ -40,13 +40,6 @@ spec:
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         resources:
 {{ toYaml .Values.resources | indent 10 }}
-        env:
-        - name: MYSQL_PASSWORD
-          value: 12netwyw#&*
-        - name: MYSQL_URL
-          value: mysql
-        - name: MYSQL_USER
-          value: root
         ports:
         - containerPort: {{ .Values.service.port }}
         resources:
