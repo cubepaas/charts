@@ -19,12 +19,13 @@ spec:
             - matchExpressions:
               - key: "provider.cubepaas.com/driver"
                 operator: In
+                {{- if (eq "idc" .Values.global.affinity.domain) }}
                 values:
-    {{- if eq .Values.global.affinity.domain "idc" }}
-                 - ""
-    {{- else }}
+                  - ""
+                {{- else }}
+                values:
                   - "{{ .Values.global.affinity.domain }}"
-    {{- end }}
+                {{- end }}
 {{- end }}
  {{- if .Values.global.preferenceaffinity.enabled }}
            preferredDuringSchedulingIgnoredDuringExecution:
@@ -32,12 +33,13 @@ spec:
               matchExpressions:
               - key: "provider.cubepaas.com/driver"
                 operator: In
+                {{- if (eq "idc" .Values.global.affinity.domain) }}
                 values:
-  {{- if eq .Values.global.affinity.domain "idc" }}
-                - ""
-  {{- else }}
-                - "{{ .Values.global.affinity.domain }}"
-  {{- end }}
+                  - ""
+                {{- else }}
+                values:
+                  - "{{ .Values.global.affinity.domain }}"
+                {{- end }}
 {{- end }}
       containers:
       - env:
