@@ -28,7 +28,8 @@ spec:
         {{- end }}
         {{- if .Values.global.preferenceaffinity.enabled }}
           preferredDuringSchedulingIgnoredDuringExecution:
-          - preference:
+          - weight: 1
+            preference:
               matchExpressions:
               - key: "provider.cubepaas.com/driver"
                 operator: In
