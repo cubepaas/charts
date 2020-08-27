@@ -12,7 +12,7 @@ spec:
     spec:
       affinity:
         nodeAffinity:
-  {{- if .Values.global.requiredaffinity.enabled }}
+        {{- if .Values.global.requiredaffinity.enabled }}
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
@@ -25,9 +25,9 @@ spec:
                 values:
                   - "{{ .Values.global.affinity.domain }}"
                 {{- end }}
-  {{- end }}
-  {{- if .Values.global.preferenceaffinity.enabled }}
-           preferredDuringSchedulingIgnoredDuringExecution:
+        {{- end }}
+        {{- if .Values.global.preferenceaffinity.enabled }}
+          preferredDuringSchedulingIgnoredDuringExecution:
           - preference:
               matchExpressions:
               - key: "provider.cubepaas.com/driver"
@@ -39,7 +39,7 @@ spec:
                 values:
                 - "{{ .Values.global.affinity.domain }}"
                 {{- end }}
-  {{- end }}
+        {{- end }}
   {{- if .Values.imagePullSecret }}
       imagePullSecrets:
       - name: {{ .Values.imagePullSecret }}
