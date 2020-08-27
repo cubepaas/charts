@@ -6,7 +6,7 @@ app:
 
 global:
   affinity:
-    domain: "idc"
+    domain: ""
   requiredaffinity:
     enabled: false
   preferenceaffinity:

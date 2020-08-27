@@ -32,11 +32,11 @@ spec:
               - key: "provider.cubepaas.com/driver"
                 operator: In
                 values:
-                {{- if eq .Values.global.affinity.domain "idc" }}
+      {{- if eq .Values.global.affinity.domain "idc" }}
                 - ""
-                {{- else }}
+      {{- else }}
                 - "{{ .Values.global.affinity.domain }}"
-                {{- end }}
+      {{- end }}
 {{- end }}
   {{- if .Values.imagePullSecret }}
       imagePullSecrets:
