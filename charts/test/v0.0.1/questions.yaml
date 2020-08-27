@@ -23,7 +23,7 @@
      label: MySQL User
      group: "MySQL Settings"
    - variable: mysql.mysqlPassword
-     default: "12netwyw#&*"
+     default: "12netwyw#*"
      description: "Password of user"
      type: string
      required: true
@@ -129,17 +129,17 @@
        type: string
        label: App host secret
 
- - variable: global.affinity.requiredaffinity.enabled
-   default: "false"
+ - variable: global.requiredaffinity.enabled
+   default: false
    description: "domain requiredaffinity"
-   type: string
+   type: boolean
    label: Doamin Requiredaffinity
    group: "domain select"
 
- - variable: global.affinity.preferenceaffinity.enabled
-   default: "false"
+ - variable: global.preferenceaffinity.enabled
+   default: false
    description: "domain preferenceaffinity"
-   type: string
+   type: boolean
    label: Doamin Preferenceaffinity
    group: "domain select"
 

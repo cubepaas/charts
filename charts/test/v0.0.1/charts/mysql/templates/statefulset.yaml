@@ -13,23 +13,23 @@ spec:
     spec:
       affinity:
         nodeAffinity:
- {{- if .Values.global.affinity.requiredaffinity.enabled }}
+ {{- if .Values.global.requiredaffinity.enabled }}
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
               - key: "provider.cubepaas.com/driver"
                 operator: In
                 values:
-                - {{ .values.global.affinity.domain }}
+                - "{{ .Values.global.affinity.domain }}"
 {{- end }}
- {{- if .Values.global.affinity.preferenceaffinity.enabled }}
+ {{- if .Values.global.preferenceaffinity.enabled }}
            preferredDuringSchedulingIgnoredDuringExecution:
           - preference:
               matchExpressions:
               - key: "provider.cubepaas.com/driver"
                 operator: In
                 values:
-                - {{ .values.global.affinity.domain }}
+                - "{{ .Values.global.affinity.domain }}"
 {{- end }}
       containers:
       - env:
@@ -42,7 +42,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: mysql-secret
-              key: mysql-root-password
+              key: mysql-password
         - name: MYSQL_USER
           valueFrom:
             secretKeyRef:
