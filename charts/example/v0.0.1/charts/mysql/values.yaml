@@ -20,15 +20,6 @@ persistence:
   size: 20Gi
 
 resources: {}
- 
- # Custom mysql configuration files used to override default mysql settings
-configurationFiles:
-   expireLogsDays: "30"
-   maxBinlogSize: "200m"
-   serverId: "250"
-   logBin: "/binlog/master-bin.log"
-   logBinIndex: "/binlog/master-bin.index"
-   binLogIgnoreDb: "mysql"
 
 service:
    ## Specify a service type
