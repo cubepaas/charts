@@ -91,18 +91,8 @@ questions:
   group: "Redis Slave Settings"
   options:
   - "ClusterIP"
-  - "NodePort"
   required: true
   label: Redis Slave Service Type
-  show_subquestion_if: "NodePort"
-  subquestions:
-  - variable: slave.service.nodePort
-    default: ""
-    description: "NodePort port number(to set explicitly, choose port between 30000-32767)"
-    type: int
-    min: 30000
-    max: 32767
-    label: Redis Slave Service NodePort number
 # sentinel config
 - variable: sentinel.enabled
   default: false
