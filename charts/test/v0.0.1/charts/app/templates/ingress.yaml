@@ -7,7 +7,7 @@ metadata:
     app: {{ .Values.name }}
 spec:
   rules:
-  - host: {{ .Values.ingress.hosts }}
+  - host: {{ .Values.ingress.host }}
     http:
       paths:
         - path:
@@ -17,7 +17,7 @@ spec:
   {{- if .Values.ingress.tls }}
   tls:
   - hosts:
-    - {{ .Values.ingress.hosts }}
+    - {{ .Values.ingress.host }}
     secretName: {{ .Values.ingress.secret }}
   {{- end }}
 {{- end }}
