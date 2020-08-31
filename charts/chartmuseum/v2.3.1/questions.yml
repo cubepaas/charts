@@ -179,6 +179,32 @@ questions:
     description: "If not empty, uses the specified existing PVC instead of creating new one"
     type: pvc
     label: Uses Existing Persistent Volume Cliam for LocalStorage
+  # Service and L7 LoadBalancer
+- variable: ingress.enabled
+  default: true
+  description: "Expose app using Layer 7 Load Balancer - ingress"
+  type: boolean
+  label: Expose app using Layer 7 Load Balancer
+  show_subquestion_if: true
+  group: "Services and Load Balancing"
+  subquestions:
+    - variable: ingress.hosts[0]
+      default: "xip.io"
+      description: "Hostname to your app installation"
+      type: hostname
+      required: true
+      label: Hostname
+- variable: service.type
+  required: true
+  default: "LoadBalancer"
+  description: "ChartMuseum Service Type"
+  type: enum
+  label: Service Type For ChartMuseum
+  group: "Services and Load Balancing"
+  show_if: "ingress.enabled=false"
+  options:
+    - "ClusterIP"
+    - "LoadBalancer"
 # chartmuseum options
 - variable: env.open.SHOW_ADVANCED
   default: false

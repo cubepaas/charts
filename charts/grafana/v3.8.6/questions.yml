@@ -88,3 +88,27 @@ questions:
     description: "If not empty, uses the specified existing PVC instead of creating new one"
     type: pvc
     label: Existing Persistent Volume Claim for Grafana
+- variable: ingress.enabled
+  default: true
+  description: "Expose grafana using Layer 7 Load Balancer - ingress"
+  type: boolean
+  label: Expose Grafana using Layer 7 Load Balancer
+  show_subquestion_if: true
+  group: "Service and Load Balancing"
+  required: true
+  subquestions:
+  - variable: ingress.hosts[0]
+    default: "xip.io"
+    description: "Hostname to your grafana installation"
+    type: hostname
+    required: true
+    label: Hostname
+- variable: service.type
+  default: "ClusterIP"
+  description: "Grafana service type"
+  type: enum
+  group: "Service and Load Balancing"
+  options:
+    - "ClusterIP"
+  required: true
+  label: Grafana Service Type
