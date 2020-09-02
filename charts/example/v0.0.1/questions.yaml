@@ -124,7 +124,7 @@
        required: true
        label: App Tls
      - variable: app.ingress.secret
-       default: "tls-secret"
+       default: ""
        description: "app host secret"
        type: string
        label: App host secret
