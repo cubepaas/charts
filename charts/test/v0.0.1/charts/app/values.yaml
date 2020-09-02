@@ -46,4 +46,4 @@ ingress:
   enabled: true
   tls: true
   host: example.cubepaas.com
-  secret: tls-secret
+  secret: ""

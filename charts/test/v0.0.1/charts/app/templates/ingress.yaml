@@ -18,6 +18,8 @@ spec:
   tls:
   - hosts:
     - {{ .Values.ingress.host }}
+  {{- if .Values.ingress.secret }}
     secretName: {{ .Values.ingress.secret }}
+  {{- end }}
   {{- end }}
 {{- end }}
