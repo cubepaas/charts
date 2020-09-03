@@ -84,7 +84,7 @@ questions:
   group: "Kafka Topics UI"
   subquestions:
   - variable: kafka-topics-ui.ingress.hosts[0]
-    default: "xip.io"
+    default: ""
     description: "layer 7 Load Balancer hostname"
     type: hostname
     show_if: "kafka-topics-ui.enabled=true&&kafka-topics-ui.ingress.enabled=true&&global.enterprise=false"

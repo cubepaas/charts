@@ -189,7 +189,7 @@ questions:
   group: "Services and Load Balancing"
   subquestions:
     - variable: ingress.hosts[0]
-      default: "xip.io"
+      default: ""
       description: "Hostname to your app installation"
       type: hostname
       required: true

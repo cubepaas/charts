@@ -102,7 +102,7 @@ questions:
   required: true
   subquestions:
   - variable: yarn.ingress.hosts[0]
-    default: "xip.io"
+    default: ""
     description: "Hostname to your YARN UI installation"
     type: hostname
     required: true

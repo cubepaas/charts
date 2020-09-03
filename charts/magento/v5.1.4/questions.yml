@@ -193,7 +193,7 @@ questions:
   group: "Services and Load Balancing"
   subquestions:
   - variable: ingress.hosts[0].name
-    default: "xip.io"
+    default: ""
     description: "Hostname to your WordPress installation"
     type: hostname
     required: true

@@ -98,7 +98,7 @@ questions:
   required: true
   subquestions:
   - variable: ingress.hosts[0]
-    default: "xip.io"
+    default: ""
     description: "Hostname to your grafana installation"
     type: hostname
     required: true
