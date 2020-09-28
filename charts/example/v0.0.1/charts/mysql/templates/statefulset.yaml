@@ -80,12 +80,12 @@ spec:
           mountPath: /var/lib/mysql
       restartPolicy: Always
   volumeClaimTemplates:
-    - metadata:
-        name: data
-      spec:
-        accessModes:
-        - ReadWriteOnce
-        resources:
-          requests:
-            storage: {{ .Values.persistence.size }}
+  - metadata:
+      name: data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: {{ .Values.persistence.size }}
       storageClassName: {{ .Values.persistence.storageClass }}
