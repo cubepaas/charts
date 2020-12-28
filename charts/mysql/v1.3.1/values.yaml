@@ -123,7 +123,10 @@ resources:
 configurationFilesPath: /etc/mysql/conf.d/
 
 # Custom mysql configuration files used to override default mysql settings
-configurationFiles: {}
+configurationFiles:
+  mysql.cnf: |-
+    [mysqld]
+    character-set-server = utf8mb4
 #  mysql.cnf: |-
 #    [mysqld]
 #    skip-name-resolve
