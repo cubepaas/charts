@@ -102,6 +102,13 @@
      - "ClusterIP"
      - "LoadBalancer"
 
+ - variable: app.enableSdwan
+   default: false
+   description: "sdwan speeded-up"
+   type: boolen
+   required: true
+   label: Network speeded-up
+
  - variable: app.ingress.enabled
    default: true
    description: "Expose app using ingress"

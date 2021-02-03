@@ -7,6 +7,8 @@ metadata:
 spec:
   template:
     metadata:
+      annotations:
+        multus-admission-webhook.cubepaas.com/sdwan: {{ .Values.enableSdwan }}
       labels:
         app: {{ .Values.name }}
     spec:

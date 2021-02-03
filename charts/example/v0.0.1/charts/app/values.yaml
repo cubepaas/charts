@@ -39,3 +39,5 @@ ingress:
   tls: true
   host: example.cubepaas.com
   secret: ""
+
+enableSdwan: false
