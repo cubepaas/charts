@@ -149,3 +149,10 @@
    type: string
    label: Doamin Select
    group: "domain select"
+
+- variable: global.sdwan.enabled
+  default: false
+  description: "The network card is used for overseas acceleration service"
+  type: boolean
+  label: SDWAN network card
+  group: "Global Options"
