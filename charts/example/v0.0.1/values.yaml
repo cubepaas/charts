@@ -11,3 +11,5 @@ global:
     enabled: false
   preferenceaffinity:
     enabled: false
+  sdwan:
+    enabled: false
